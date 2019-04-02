@@ -23,9 +23,13 @@ write-host "post add of package add"
 
 write-host "Pre updating ubu"
 
+write-host "RefreshEnv"
 RefreshEnv
+write-host "Ubuntu1804 install --root"
 Ubuntu1804 install --root
+write-host "Ubuntu1804 run apt update"
 Ubuntu1804 run apt update
+write-host "Ubuntu1804 run apt upgrade -y"
 Ubuntu1804 run apt upgrade -y
 
 write-host "post updating ubu"
