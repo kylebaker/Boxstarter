@@ -11,6 +11,8 @@ write-host "Post install of WSL"
 
 write-host "Pre invoke of webrequest"
 
+if (Test-PendingReboot) { Invoke-Reboot }
+
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
 
 write-host "Post invoke of webrequest"

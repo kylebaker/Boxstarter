@@ -36,3 +36,4 @@ executeScript "WSL.ps1";
 Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+if (Test-PendingReboot) { Invoke-Reboot }
