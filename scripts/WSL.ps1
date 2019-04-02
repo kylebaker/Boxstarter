@@ -2,6 +2,8 @@
 
 choco install -y Microsoft-Windows-Subsystem-Linux -source windowsfeatures
 
+Invoke-Reboot
+
 #--- Ubuntu ---
 # TODO: Move this to choco install once --root is included in that package
 Invoke-WebRequest https://aka.ms/wsl-ubuntu-1804 -out ubuntu.zip -UseBasicParsing
