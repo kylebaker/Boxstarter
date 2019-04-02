@@ -26,9 +26,9 @@ function executeScript {
 
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
-#executeScript "WSL.ps1";
-#executeScript "RemoveDefaultApps.ps1";
-#executeScript "Browsers.ps1";
+executeScript "WSL.ps1";
+executeScript "RemoveDefaultApps.ps1";
+executeScript "Browsers.ps1";
 
 
 #--- reenabling critial items ---
@@ -37,3 +37,7 @@ Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
 if (Test-PendingReboot) { Invoke-Reboot }
+
+# Remove desktop.ini files
+Get-ChildItem -Path (Join-Path ${Env:UserProfile} "Desktop") -Hidden -Filter "desktop.ini" -Force | foreach {$_.Delete()}
+Get-ChildItem -Path (Join-Path ${Env:Public} "Desktop") -Hidden -Filter "desktop.ini" -Force | foreach {$_.Delete()}
