@@ -3,6 +3,7 @@
 # For: Aquaveo
 # Referencing heavily from: https://github.com/Microsoft/windows-dev-box-setup-scripts/blob/master/dev_app_desktop_.NET.ps1
 
+Set-ExecutionPolicy Unrestricted --force
 Disable-UAC
 
 # Get the base URI path from the ScriptToCall value
