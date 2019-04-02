@@ -25,15 +25,14 @@ function executeScript {
 #--- Setting Up Windows ---
 
 executeScript "FileExplorerSettings.ps1";
-if (Test-PendingReboot) { Invoke-Reboot }
 executeScript "SystemConfiguration.ps1";
-if (Test-PendingReboot) { Invoke-Reboot }
-executeScript "Browsers.ps1";
-if (Test-PendingReboot) { Invoke-Reboot }
-executeScript "RemoveDefaultApps.ps1";
 executeScript "WSL.ps1";
-executeScript "Browsers.ps1";
-if (Test-PendingReboot) { Invoke-Reboot }
+
+#---I know these work ---
+# executeScript "Browsers.ps1";
+# executeScript "RemoveDefaultApps.ps1";
+# executeScript "Browsers.ps1";
+
 
 #--- reenabling critial items ---
 
