@@ -31,12 +31,13 @@ if (Test-PendingReboot) { Invoke-Reboot }
 executeScript "Browsers.ps1";
 if (Test-PendingReboot) { Invoke-Reboot }
 executeScript "RemoveDefaultApps.ps1";
+executeScript "WSL.ps1";
+executeScript "Browsers.ps1";
 if (Test-PendingReboot) { Invoke-Reboot }
-#--- executeScript "WSL.ps1";
 
 #--- reenabling critial items ---
 
 Enable-UAC
+Invoke-Reboot
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -AcceptEula
-if (Test-PendingReboot) { Invoke-Reboot }
