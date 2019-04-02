@@ -17,6 +17,7 @@ write-host "Post invoke of webrequest"
 write-host "Pre add of package add"
 
 Add-AppxPackage -Path ~/Ubuntu.appx
+if (Test-PendingReboot) { Invoke-Reboot }
 
 write-host "post add of package add"
 # run the distro once and have it install locally with root user, unset password
