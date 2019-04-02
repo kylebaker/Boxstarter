@@ -3,7 +3,6 @@
 # For: Aquaveo
 # Referencing heavily from: https://github.com/Microsoft/windows-dev-box-setup-scripts/blob/master/dev_app_desktop_.NET.ps1
 
-Set-ExecutionPolicy Unrestricted
 Disable-UAC
 
 # Get the base URI path from the ScriptToCall value
@@ -25,10 +24,14 @@ function executeScript {
 
 #--- Setting Up Windows ---
 
-executeScript "SystemConfiguration.ps1";
-executeScript "Browsers.ps1";
 executeScript "FileExplorerSettings.ps1";
+if (Test-PendingReboot) { Invoke-Reboot }
+executeScript "SystemConfiguration.ps1";
+if (Test-PendingReboot) { Invoke-Reboot }
+executeScript "Browsers.ps1";
+if (Test-PendingReboot) { Invoke-Reboot }
 executeScript "RemoveDefaultApps.ps1";
+if (Test-PendingReboot) { Invoke-Reboot }
 #--- executeScript "WSL.ps1";
 
 #--- reenabling critial items ---
@@ -37,4 +40,3 @@ Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -AcceptEula
 if (Test-PendingReboot) { Invoke-Reboot }
-Set-ExecutionPolicy Unrestricted -Force
