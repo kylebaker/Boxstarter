@@ -37,6 +37,5 @@ executeScript "WSL.ps1";
 #--- reenabling critial items ---
 
 Enable-UAC
-Invoke-Reboot
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
