@@ -26,9 +26,9 @@ function executeScript {
 
 executeScript "FileExplorerSettings.ps1";
 executeScript "SystemConfiguration.ps1";
-#executeScript "WSL.ps1";
-executeScript "RemoveDefaultApps.ps1";
-executeScript "Browsers.ps1";
+executeScript "WSL.ps1";
+#executeScript "RemoveDefaultApps.ps1";
+#executeScript "Browsers.ps1";
 
 
 #--- reenabling critial items ---
