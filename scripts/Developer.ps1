@@ -16,6 +16,7 @@ choco install -y vlc
 choco install -y strawberryperl
 choco install -y tortoisesvn
 choco install -y tortoisegit
+choco install -y vs2013 -s http://192.168.99.5/chocolatey/
 choco install -y incredibuilder -s http://192.168.99.5/chocolatey/
 choco install -y hdfview -s http://192.168.99.5/chocolatey/
 
