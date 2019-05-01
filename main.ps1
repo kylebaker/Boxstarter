@@ -24,7 +24,7 @@ function executeScript {
     iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-
+iex "cinst -y powershell"
 
 #--- Setting Up Windows ---
 # These are the scripts that are to be used. They are modular and if you don't need one, comment the line out.
