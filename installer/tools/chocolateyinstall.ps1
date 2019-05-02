@@ -6,8 +6,10 @@ Import-Module "$($Boxstarter.BaseDir)\Boxstarter.Common\boxstarter.common.psd1"
 $packageName      = 'installer'
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $cache            =  "$env:userprofile\AppData\Local\ChocoCache"
-$globalCinstArgs  = "--cacheLocation $cache -y"
 
+
+write-host $toolsDir
+write-host $cache
 
 function InitialSetup {
   # Basic system setup
@@ -42,13 +44,21 @@ function InitialSetup {
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
+write-host " bootstrap package $bstrappackage"
 $helperUri = $Boxstarter['ScriptToCall']
+write-host "Base Helper URI $helperUri"
 $strpos = $helperUri.IndexOf($bstrappackage)
+write-host "Whatever strpos is: $strpos"
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
+write-host $helperUri
 $helperUri = $helperUri.TrimStart("'", " ")
+write-host $helperUri
 $helperUri = $helperUri.TrimEnd("'", " ")
-$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
+write-host $helperUri
+#$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
+write-host $helperUri
 $helperUri += "/scripts"
+write-host "Final Helper URI $helperUri"
 write-host "helper script base URI is $helperUri"
 
 function executeScript {
@@ -78,14 +88,9 @@ function Main {
   InitialSetup
 
   #stock. Should not change
-  executeScript "FileExplorerSettings.ps1";
   executeScript "SystemConfiguration.ps1";
   executeScript "RemoveDefaultApps.ps1";
-
-
-  #executeScript "WSL.ps1";
   executeScript "Developer.ps1";
-  #executeScript "EssentialApps.ps1";
 
   CleanUp
   return 0
