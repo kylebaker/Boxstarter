@@ -7,7 +7,8 @@ $packageName      = 'installer'
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $cache            =  "$env:userprofile\AppData\Local\ChocoCache"
 
-
+$pp=(Get-Item -Path ".\").FullName
+Write-Host "this is the present working direcotry $pp"
 write-host $toolsDir
 write-host $cache
 
@@ -44,27 +45,17 @@ function InitialSetup {
 
 # Get the base URI path from the ScriptToCall value
 $bstrappackage = "-bootstrapPackage"
-write-host " bootstrap package $bstrappackage"
 $helperUri = $Boxstarter['ScriptToCall']
-write-host "Base Helper URI $helperUri"
 $strpos = $helperUri.IndexOf($bstrappackage)
-write-host "Whatever strpos is: $strpos"
 $helperUri = $helperUri.Substring($strpos + $bstrappackage.Length)
-write-host $helperUri
 $helperUri = $helperUri.TrimStart("'", " ")
-write-host $helperUri
 $helperUri = $helperUri.TrimEnd("'", " ")
-write-host $helperUri
-#$helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
-write-host $helperUri
-$helperUri += "/scripts"
-write-host "Final Helper URI $helperUri"
-write-host "helper script base URI is $helperUri"
+$helperUri += "/tools/scripts"
 
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
-    iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
+    iex "C:\ProgramData\chocolatey\lib\$helperUri\$script"
 }
 
 
