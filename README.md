@@ -1,1 +1,3 @@
 # Boxstarter
+
+A script desgined to help the automation of fresh installs of Windows systems at Aquaveo. It's a hybrid of [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts/) and [Commando VM](https://github.com/fireeye/commando-vm/blob/master/README.md) scripts. Some of the packages are hosted on a chocolatey server internally that wont work if run outside our internal environment. 
