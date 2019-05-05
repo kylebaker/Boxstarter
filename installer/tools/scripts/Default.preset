@@ -54,7 +54,7 @@ DisableScriptHost               # EnableScriptHost
 EnableDotNetStrongCrypto        # DisableDotNetStrongCrypto
 # EnableMeltdownCompatFlag      # DisableMeltdownCompatFlag
 EnableF8BootMenu                # DisableF8BootMenu
-# DisableBootRecovery           # EnableBootRecovery
+DisableBootRecovery           # EnableBootRecovery
 # DisableRecoveryAndReset       # EnableRecoveryAndReset
 SetDEPOptOut                    # SetDEPOptIn
 
@@ -83,7 +83,7 @@ DisableAutorun                  # EnableAutorun
 # DisableAutoRebootOnCrash      # EnableAutoRebootOnCrash
 
 ### UI Tweaks ###
-DisableActionCenter             # EnableActionCenter
+#DisableActionCenter             # EnableActionCenter
 DisableLockScreen               # EnableLockScreen
 # DisableLockScreenRS1          # EnableLockScreenRS1
 HideNetworkFromLockScreen       # ShowNetworkOnLockScreen
@@ -190,5 +190,5 @@ RemoveFaxPrinter                # AddFaxPrinter
 # UnpinTaskbarIcons
 
 ### Auxiliary Functions ###
-WaitForKey
-Restart
+# WaitForKey
+# Restart
