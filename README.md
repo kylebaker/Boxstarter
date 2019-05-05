@@ -2,6 +2,16 @@
 
 A script desgined to help with the automation of fresh installs of Windows systems at Aquaveo. It's a hybrid of [Windows Dev Box Setup Scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts/) and [Commando VM](https://github.com/fireeye/commando-vm/blob/master/README.md) scripts. Some of the packages it tries to install are hosted on a chocolatey server internally that wont work if run outside our internal environment. 
 
+## Installation Instructions
+
+1. Clone this repository
+2. Double-click the `install.bat` file
+3. UAC will pop up, click yes
+4. The script will ask for the user password for reboots, type it
+5. Let it run, it'll reboot A LOT before it finishes.
+
+-Sidenote: If you run this off a USB, after the first reboot, you can safely remove the USB without breaking the script. The needed files are saved on the host machine once the first reboot has occured. 
+
 ## How it works
 
 This uses [Boxstarter](https://boxstarter.org/) and [Chocolatey](https://chocolatey.org/) in combination to automate the install of windows applications, windows updates and a slew of configuration changes to Windows. The **main.ps1** script gets everything going and I've tried to organize it all to be modular and easy to follow.
