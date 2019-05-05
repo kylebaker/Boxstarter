@@ -1,13 +1,14 @@
 # Description: Boxstarter Script to setup internally used computers
 # Author: Kyle Baker
 # For: Aquaveo
-# Referencing heavily from: https://github.com/Microsoft/windows-dev-box-setup-scripts/blob/master/dev_app_desktop_.NET.ps1
+# Referencing heavily from: https://github.com/Microsoft/windows-dev-box-setup-scripts/
+# and
+# Referenceing heavily from: https://github.com/fireeye/commando-vm
 
 
-# To execute this script:
-# 1) Open powershell window as administrator
-# 2) Allow script execution by running command "Set-ExecutionPolicy Unrestricted"
-# 3) Execute the script by running ".\install.ps1"
+# The following is needed to take the input string from the batch file
+# and put it into a variable string that we can then use to set as the
+# current working directory
 
 param(
         [Parameter(
@@ -16,6 +17,13 @@ param(
                     HelpMessage='Set path variable')]
         [string] $w
 )
+
+# Sets the current directory to the input above
+
+set-location $w
+
+# This function installs BoxStarter
+
 function installBoxStarter()
 {
   <#
@@ -69,22 +77,17 @@ function installBoxStarter()
   return $true
 }
 
-set-location $w
-
-$pp=(Get-Item -Path ".\").FullName
-Write-Host $pp
-
 Write-Host "[+] Beginning install..."
 Write-Host " ____________________________________________________________________________ " -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
 Write-Host "|    "  -ForegroundColor Red -NoNewline; Write-Host "                  " -ForegroundColor Green -NoNewline; Write-Host "                                                      |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host "________                .___                 __         .__  .__ " -ForegroundColor Green -NoNewline; Write-Host "                         |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host "\______ \   _______  __ |   | ____   _______/  |______  |  | |  | " -ForegroundColor Green -NoNewline; Write-Host "                       |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host " |    |  \_/ __ \  \/ / |   |/    \ /  ___/\   __\__  \ |  | |  |  " -ForegroundColor Green -NoNewline; Write-Host "          |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host " |    `   \  ___/\   /  |   |   |  \\___ \  |  |  / __ \|  |_|  |__" -ForegroundColor Green -NoNewline; Write-Host "          |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host "/_______  /\___  >\_/   |___|___|  /____  > |__| (____  /____/____/" -ForegroundColor Green -NoNewline; Write-Host "          |" -ForegroundColor Red 
-Write-Host "|        "  -ForegroundColor Red -NoNewline; Write-Host "        \/     \/                \/     \/            \/           " -ForegroundColor Green -NoNewline; Write-Host "                |" -ForegroundColor Red 
-Write-Host "|                               NHI Laptop Updater                           |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "________                .___                 __         .__  .__ " -ForegroundColor Green -NoNewline; Write-Host "      |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "\______ \   _______  __ |   | ____   _______/  |______  |  | |  | " -ForegroundColor Green -NoNewline; Write-Host "     |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host " |    |  \_/ __ \  \/ / |   |/    \ /  ___/\   __\__  \ |  | |  |  " -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host " |    |   \  ___/\   /  |   |   |  \\___ \  |  |  / __ \|  |_|  |__" -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "/_______  /\___  >\_/   |___|___|  /____  > |__| (____  /____/____/" -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
+Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "        \/     \/                \/     \/            \/           " -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
+Write-Host "|                          Dev Workstation AutoInstaller                     |" -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
 Write-Host "|                                  Version 1.0                               |" -ForegroundColor Red 
 Write-Host "|____________________________________________________________________________|" -ForegroundColor Red 
@@ -107,13 +110,7 @@ if (-Not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
   exit
 }
 else {
-  Start-Sleep -Milliseconds 500
-  Write-Host "`tphenomenal " -ForegroundColor Magenta -NoNewLine
-  Start-Sleep -Milliseconds 500
-  Write-Host "cosmic " -ForegroundColor Cyan -NoNewLine
-  Start-Sleep -Milliseconds 500
-  Write-Host "powers " -ForegroundColor Green
-  Start-Sleep -Milliseconds 500
+  Write-Host "`tRuning as Administrator" -ForegroundColor Magenta
 }
 
 # Get user credentials for autologin during reboots
@@ -146,16 +143,18 @@ $Boxstarter.RebootOk = $true    # Allow reboots?
 $Boxstarter.NoPassword = $false # Is this a machine with no login password?
 $Boxstarter.AutoLogin = $true   # Save my password securely and auto-login after a reboot
 
+# Make a new direcotry for where the packages will be placed once made
 new-item C:\packages -ItemType directory
 Set-BoxstarterConfig -LocalRepo "C:\packages\"
 
 # Needed for many applications
 iex "cinst -y powershell"
 
+# Make the pacakges and place them in the directory created above
+
 iex "choco pack installer\installer.nuspec --outputdirectory C:\packages\"
 
-$pp=(Get-Item -Path ".\").FullName
-Write-Host $pp
+# Start the Boxstarter install
 
 choco config set cacheLocation ${Env:TEMP}
 Install-BoxstarterPackage -PackageName installer -Credential $cred

@@ -1,16 +1,22 @@
+# Needed to continue on errors
+
 $ErrorActionPreference = 'Continue'
+
+# import the boxstarter bits needed foe the rest of the script
 
 Import-Module Boxstarter.Chocolatey
 Import-Module "$($Boxstarter.BaseDir)\Boxstarter.Common\boxstarter.common.psd1"
 
+# Declare some variables we will use later
+
 $packageName      = 'installer'
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $cache            =  "$env:userprofile\AppData\Local\ChocoCache"
+$ps1 = Join-Path $toolsDir '\scripts\Win10.ps1'
+$psm1 = Join-Path $toolsDir '\scripts\Win10.psm1'
+$preset = Join-Path $toolsDir '\scripts\Default.preset'
 
-$pp=(Get-Item -Path ".\").FullName
-Write-Host "this is the present working direcotry $pp"
-write-host $toolsDir
-write-host $cache
+powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 
 function InitialSetup {
   # Basic system setup
@@ -41,6 +47,8 @@ function InitialSetup {
   & powercfg -change -standby-timeout-dc 0 | Out-Null
   & powercfg -change -hibernate-timeout-ac 0 | Out-Null
   & powercfg -change -hibernate-timeout-dc 0 | Out-Null
+
+  powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 }
 
 # Get the base URI path from the ScriptToCall value
