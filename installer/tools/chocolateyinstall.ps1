@@ -16,8 +16,6 @@ $ps1 = Join-Path $toolsDir '\scripts\Win10.ps1'
 $psm1 = Join-Path $toolsDir '\scripts\Win10.psm1'
 $preset = Join-Path $toolsDir '\scripts\Default.preset'
 
-powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
-
 function InitialSetup {
   # Basic system setup
   Update-ExecutionPolicy Unrestricted
@@ -48,6 +46,9 @@ function InitialSetup {
   & powercfg -change -hibernate-timeout-ac 0 | Out-Null
   & powercfg -change -hibernate-timeout-dc 0 | Out-Null
 
+  # Script from https://github.com/Disassembler0/Win10-Initial-Setup-Script that removes a ton 
+  # of Windows garbage. The default.preset has been edited from the orignal to match our
+  # use case.
   powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 }
 
@@ -66,7 +67,7 @@ function executeScript {
     iex "C:\ProgramData\chocolatey\lib\$helperUri\$script"
 }
 
-
+# Re-enables all the stuff that was turned off during autoinstalls
 function CleanUp
 {
   Enable-UAC
@@ -89,6 +90,9 @@ function Main {
   #stock. Should not change
   executeScript "SystemConfiguration.ps1";
   executeScript "RemoveDefaultApps.ps1";
+  
+
+  #Unique for this Aquaveo package
   executeScript "Developer.ps1";
 
   CleanUp
