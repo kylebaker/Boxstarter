@@ -9,7 +9,7 @@ Import-Module "$($Boxstarter.BaseDir)\Boxstarter.Common\boxstarter.common.psd1"
 
 # Declare some variables we will use later
 
-$packageName      = 'installer'
+$packageName      = 'tech'
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $cache            =  "$env:userprofile\AppData\Local\ChocoCache"
 $ps1 = Join-Path $toolsDir '\scripts\Win10.ps1'
@@ -93,7 +93,7 @@ function Main {
   
 
   #Unique for this Aquaveo package
-  executeScript "Developer.ps1";
+  executeScript "TechSupport.ps1";
 
   CleanUp
   return 0

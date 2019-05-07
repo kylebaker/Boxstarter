@@ -81,15 +81,20 @@ Write-Host "[+] Beginning install..."
 Write-Host " ____________________________________________________________________________ " -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
 Write-Host "|    "  -ForegroundColor Red -NoNewline; Write-Host "                  " -ForegroundColor Green -NoNewline; Write-Host "                                                      |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "________                .___                 __         .__  .__ " -ForegroundColor Green -NoNewline; Write-Host "      |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "\______ \   _______  __ |   | ____   _______/  |______  |  | |  | " -ForegroundColor Green -NoNewline; Write-Host "     |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host " |    |  \_/ __ \  \/ / |   |/    \ /  ___/\   __\__  \ |  | |  |  " -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host " |    |   \  ___/\   /  |   |   |  \\___ \  |  |  / __ \|  |_|  |__" -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "/_______  /\___  >\_/   |___|___|  /____  > |__| (____  /____/____/" -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
-Write-Host "|     "  -ForegroundColor Red -NoNewline; Write-Host "        \/     \/                \/     \/            \/           " -ForegroundColor Green -NoNewline; Write-Host "    |" -ForegroundColor Red 
-Write-Host "|                          Dev Workstation AutoInstaller                     |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "    ___                                     " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   /   | ____ ___  ______ __   _____  ____  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "  / /| |/ __ '/ / / / __ '/ | / / _ \/ __ \ " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host " / ___ / /_/ / /_/ / /_/ /| |/ /  __/ /_/ / " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "/_/  |_\__, /\__,_/\__,_/ |___/\___/\____/  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "         /_/                                " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "    ____           __        ____           " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   /  _/___  _____/ /_____ _/ / /__  _____  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   / // __ \/ ___/ __/ __ '/ / / _ \/ ___/  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host " _/ // / / (__  ) /_/ /_/ / / /  __/ /      " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "/___/_/ /_/____/\__/\__,_/_/_/\___/_/       " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
+Write-Host "|                       Aquaveo Workstation AutoInstaller                    |" -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
-Write-Host "|                                  Version 1.0                               |" -ForegroundColor Red 
+Write-Host "|                                  Version 1.2                               |" -ForegroundColor Red 
 Write-Host "|____________________________________________________________________________|" -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
 Write-Host "|                                  Developed by                              |" -ForegroundColor Red 
@@ -112,6 +117,26 @@ if (-Not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
 else {
   Write-Host "`tRuning as Administrator" -ForegroundColor Magenta
 }
+
+Write-Host ""
+Write-Host "[ * ] Getting installer preference ..."
+Write-Host ""
+Write-Host "`t1) Developer Installer"
+Write-Host "`t2) Tech Support Installer"
+Write-Host ""
+
+$optionSelected = Read-Host "Which installer would you like to use? (1/2/quit/q)"
+
+$package = switch ($optionSelected){
+    { '1' -contains $_ }          { "dev" }
+    { '2' -contains $_ }          { "tech" }
+    { 'q', 'quit' -contains $_ }  { "You are quiting, quiter"}
+  }
+
+  Write-Host ""
+  Write-Host $package
+  Write-Host ""
+
 
 # Get user credentials for autologin during reboots
 Write-Host "[ * ] Getting user credentials ..."
@@ -152,9 +177,9 @@ iex "cinst -y powershell"
 
 # Make the pacakges and place them in the directory created above
 
-iex "choco pack installer\installer.nuspec --outputdirectory C:\packages\"
+iex "choco pack installer\$package.nuspec --outputdirectory C:\packages\"
 
 # Start the Boxstarter install
 
 choco config set cacheLocation ${Env:TEMP}
-Install-BoxstarterPackage -PackageName installer -Credential $cred
+Install-BoxstarterPackage -PackageName $package -Credential $cred

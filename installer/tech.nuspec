@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>dev</id>
+    <id>tech</id>
     <version>1.0</version>
-    <title>Dev Installer</title>
+    <title>tech support installer</title>
     <authors>Kyle Baker</authors>
-    <description>Dev Installer</description>
+    <description>tech support installer</description>
   </metadata>
   <files>
-  	<file src="dev\**" target="tools"/>
+  	<file src="tech\**" target="tools"/>
   	<file src="tools\**" target="tools"/>
   </files>
 </package>
