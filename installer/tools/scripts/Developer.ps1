@@ -17,6 +17,8 @@ choco install -y strawberryperl
 choco install -y tortoisesvn
 choco install -y tortoisegit
 choco install -y vs2013 -s http://192.168.99.5/chocolatey/
+choco install -y vs2013update5 -s http://192.168.99.5/chocolatey/
+choco install -y vs2015 -s http://192.168.99.5/chocolatey/ -timeout 0
 choco install -y incredibuilder -s http://192.168.99.5/chocolatey/
 choco install -y hdfview -s http://192.168.99.5/chocolatey/
 
