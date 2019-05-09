@@ -8,7 +8,7 @@
     <description>Dev Installer</description>
   </metadata>
   <files>
-  	<file src="dev\**" target="tools"/>
-  	<file src="tools\**" target="tools"/>
+  	<file src="tools\dev\**" target="tools"/>
+  	<file src="tools\scripts\**" target="tools\scripts"/>
   </files>
 </package>

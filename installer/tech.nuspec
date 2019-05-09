@@ -8,7 +8,7 @@
     <description>tech support installer</description>
   </metadata>
   <files>
-  	<file src="tech\**" target="tools"/>
-  	<file src="tools\**" target="tools"/>
+  	<file src="tools\tech\**" target="tools"/>
+  	<file src="tools\scripts\**" target="tools\scripts"/>
   </files>
 </package>
