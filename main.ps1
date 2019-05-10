@@ -123,13 +123,15 @@ Write-Host "[ * ] Getting installer preference ..."
 Write-Host ""
 Write-Host "`t1) Developer Installer"
 Write-Host "`t2) Tech Support Installer"
+Write-Host "`t3) Internal IT"
 Write-Host ""
 
-$optionSelected = Read-Host "Which installer would you like to use? (1/2/quit/q)"
+$optionSelected = Read-Host "Which installer would you like to use? (1/2/3/quit/q)"
 
 $package = switch ($optionSelected){
     { '1' -contains $_ }          { "dev" }
     { '2' -contains $_ }          { "tech" }
+    { '3' -contains $_ }          { "it" }
     { 'q', 'quit' -contains $_ }  { "You are quiting, quiter"}
   }
 
