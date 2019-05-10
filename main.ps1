@@ -124,12 +124,15 @@ Write-Host ""
 Write-Host "`t1) Developer Installer"
 Write-Host "`t2) Tech Support Installer"
 Write-Host ""
+Write-Host "`tn/N) No Config installer"
+Write-Host ""
 
 $optionSelected = Read-Host "Which installer would you like to use? (1/2/quit/q)"
 
 $package = switch ($optionSelected){
     { '1' -contains $_ }          { "dev" }
     { '2' -contains $_ }          { "tech" }
+    { 'n', 'N', 'no', 'NO' -contains $_ }          { "noconfig" }
     { 'q', 'quit' -contains $_ }  { "You are quiting, quiter"}
   }
 
