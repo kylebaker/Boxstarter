@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>kylethrowaway</id>
+    <version>1.0</version>
+    <title>Kyle throwaway installer for VMs</title>
+    <authors>Kyle Baker</authors>
+    <description>kyle throwaway VM installer</description>
+  </metadata>
+  <files>
+  	<file src="tools\kylethrowaway\**" target="tools"/>
+  	<file src="tools\scripts\**" target="tools\scripts"/>
+  </files>
+</package>

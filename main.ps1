@@ -127,6 +127,7 @@ Write-Host "`t3) Internal IT"
 Write-Host ""
 Write-Host "`tn/N) No Config installer"
 Write-Host ""
+Write-Host "`tk/K) Personal Kyle script for throw away VM work"
 
 $optionSelected = Read-Host "Which installer would you like to use? (1/2/3/quit/q)"
 
@@ -135,7 +136,7 @@ $package = switch ($optionSelected){
     { '2' -contains $_ }          { "tech" }
     { '3' -contains $_ }          { "it" }
     { 'n', 'N', 'no', 'NO' -contains $_ }          { "noconfig" }
-    { 'q', 'quit' -contains $_ }  { "You are quiting, quiter"}
+    { 'k', 'K' -contains $_ }  { "kylethrowaway"}
   }
 
   Write-Host ""
