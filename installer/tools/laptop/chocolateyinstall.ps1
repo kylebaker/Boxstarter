@@ -6,7 +6,7 @@ Import-Module Boxstarter.Chocolatey
 Import-Module "$($Boxstarter.BaseDir)\Boxstarter.Common\boxstarter.common.psd1"
 
 # Declare some variables we will use later
-$packageName      = 'tech'
+$packageName      = 'laptop'
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $cache            =  "$env:userprofile\AppData\Local\ChocoCache"
 $ps1 = Join-Path $toolsDir '\scripts\Win10.ps1'
@@ -35,7 +35,7 @@ function Main {
   executeScript "InitialSetup.ps1";
 
   # Script from https://github.com/Disassembler0/Win10-Initial-Setup-Script that removes a ton 
-  # of Windows garbage. The default.preset has been edited from the orignal to match our
+  # of Windows garbage. The default.preset has been edited from the orignal to match my
   # use case.
   powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 
@@ -43,8 +43,11 @@ function Main {
   executeScript "SystemConfiguration.ps1";
   executeScript "RemoveDefaultApps.ps1";
   
-  # Unique for this Aquaveo package
-  executeScript "TechSupport.ps1";
+  # Unique for this package
+  executeScript "CapsToCtl.ps1";
+  executeScript "WSL.ps1";
+  
+  
 
   # Re-enables all the stuff that was turned off during autoinstalls and does
   # the rest of the windows updates
