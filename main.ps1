@@ -80,29 +80,25 @@ function installBoxStarter()
 Write-Host "[+] Beginning install..."
 Write-Host " ____________________________________________________________________________ " -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
-Write-Host "|    "  -ForegroundColor Red -NoNewline; Write-Host "                  " -ForegroundColor Green -NoNewline; Write-Host "                                                      |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "    ___                                     " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   /   | ____ ___  ______ __   _____  ____  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "  / /| |/ __ '/ / / / __ '/ | / / _ \/ __ \ " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host " / ___ / /_/ / /_/ / /_/ /| |/ /  __/ /_/ / " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "/_/  |_\__, /\__,_/\__,_/ |___/\___/\____/  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "         /_/                                " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "    ____           __        ____           " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   /  _/___  _____/ /_____ _/ / /__  _____  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "   / // __ \/ ___/ __/ __ '/ / / _ \/ ___/  " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host " _/ // / / (__  ) /_/ /_/ / / /  __/ /      " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                     "  -ForegroundColor Red -NoNewline; Write-Host "/___/_/ /_/____/\__/\__,_/_/_/\___/_/       " -ForegroundColor Green -NoNewline; Write-Host "           |" -ForegroundColor Red 
-Write-Host "|                       Aquaveo Workstation AutoInstaller                    |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host "                  " -ForegroundColor Green -NoNewline; Write-Host "                                           |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host "  ____        _             _    " -ForegroundColor Green -NoNewline; Write-Host "                            |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |  _ \      | |           ( )   " -ForegroundColor Green -NoNewline; Write-Host "                            |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " | |_) | __ _| | _____ _ __|/ ___" -ForegroundColor Green -NoNewline; Write-Host "                            |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |  _ < / _' | |/ / _ \ '__| / __|" -ForegroundColor Green -NoNewline; Write-Host "                           |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " | |_) | (_| |   <  __/ |    \__ \" -ForegroundColor Green -NoNewline; Write-Host "                           |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |____/ \__,_|_|\_\___|_|    |___/  _ " -ForegroundColor Green -NoNewline; Write-Host "                       |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |  _ \              | |           | |" -ForegroundColor Green -NoNewline; Write-Host "                       |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " | |_) | _____  _____| |_ __ _ _ __| |_ ___ _ __ " -ForegroundColor Green -NoNewline; Write-Host "            |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |  _ < / _ \ \/ / __| __/ _' | '__| __/ _ \ '__|" -ForegroundColor Green -NoNewline; Write-Host "            |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " | |_) | (_) >  <\__ \ || (_| | |  | ||  __/ |  " -ForegroundColor Green -NoNewline; Write-Host "             |" -ForegroundColor Red 
+Write-Host "|               "  -ForegroundColor Red -NoNewline; Write-Host " |____/ \___/_/\_\___/\__\__,_|_|   \__\___|_|  " -ForegroundColor Green -NoNewline; Write-Host "             |" -ForegroundColor Red 
+Write-Host "|                            Pesrsonal AutoInstaller                         |" -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
-Write-Host "|                                  Version 1.2                               |" -ForegroundColor Red 
+Write-Host "|                                  Version 1.3                               |" -ForegroundColor Red 
 Write-Host "|____________________________________________________________________________|" -ForegroundColor Red 
 Write-Host "|                                                                            |" -ForegroundColor Red 
 Write-Host "|                                  Developed by                              |" -ForegroundColor Red 
 Write-Host "|                                   Kyle Baker                               |" -ForegroundColor Red 
-Write-Host "|                                                                            |" -ForegroundColor Red 
-Write-Host "|                                                                            |" -ForegroundColor Red 
-Write-Host "|                             For internal use at                            |" -ForegroundColor Red 
-Write-Host "|                                    Aquaveo                                 |" -ForegroundColor Red 
 Write-Host "|____________________________________________________________________________|" -ForegroundColor Red 
 Write-Host ""
 
@@ -121,22 +117,19 @@ else {
 Write-Host ""
 Write-Host "[ * ] Getting installer preference ..."
 Write-Host ""
-Write-Host "`t1) Developer Installer"
-Write-Host "`t2) Tech Support Installer"
-Write-Host "`t3) Internal IT"
+Write-Host "`t1) Desktop Config"
+Write-Host "`t2) Laptop Config"
+Write-Host "`t3) Intel Nuc Config"
 Write-Host ""
 Write-Host "`tn/N) No Config installer"
-Write-Host ""
-Write-Host "`tk/K) Personal Kyle script for throw away VM work"
 
 $optionSelected = Read-Host "Which installer would you like to use? (1/2/3/quit/q)"
 
 $package = switch ($optionSelected){
-    { '1' -contains $_ }          { "dev" }
-    { '2' -contains $_ }          { "tech" }
-    { '3' -contains $_ }          { "it" }
+    { '1' -contains $_ }          { "desktop" }
+    { '2' -contains $_ }          { "laptop" }
+    { '3' -contains $_ }          { "nuc" }
     { 'n', 'N', 'no', 'NO' -contains $_ }          { "noconfig" }
-    { 'k', 'K' -contains $_ }  { "kylethrowaway"}
   }
 
   Write-Host ""
@@ -175,7 +168,22 @@ $Boxstarter.NoPassword = $false # Is this a machine with no login password?
 $Boxstarter.AutoLogin = $true   # Save my password securely and auto-login after a reboot
 
 # Make a new direcotry for where the packages will be placed once made
-new-item C:\packages -ItemType directory
+# Used this stite for the following section:
+# https://www.powershelladmin.com/wiki/Powershell_check_if_folder_exists
+
+if (-not (Test-Path -LiteralPath C:\packages)){
+  try {
+    New-Item -Path C:\packages -ItemType Directory -ErrorAction Stop | Out-Null #-Force
+  }
+  catch {
+    Write-Error -Message "Unable to create directory C:\packages. Error was $_" -ErrorAction Stop
+  }
+  "Successfully created directory C:\packages"
+}
+else {
+  "Directory C:\packages already existed"
+}
+
 Set-BoxstarterConfig -LocalRepo "C:\packages\"
 
 # Needed for many applications
