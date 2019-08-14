@@ -43,8 +43,8 @@ function Main {
   executeScript "SystemConfiguration.ps1";
   executeScript "RemoveDefaultApps.ps1";
   
-  # Unique for this Aquaveo package
-  executeScript "It.ps1";
+  # Unique for this package
+  executeScript "CapsToCtl.ps1";
 
   # Re-enables all the stuff that was turned off during autoinstalls and does
   # the rest of the windows updates
