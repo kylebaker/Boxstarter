@@ -8,7 +8,7 @@ choco install -y googlechrome
 choco install -y hwmonitor
 choco install -y itunes
 choco install -y k-litecodecpackfull 
-choco install -y microsoft-windows-terminal
+#choco install -y microsoft-windows-terminal #not working with fresh 1903 atm
 choco install -y mpv 
 choco install -y putty
 choco install -y mremoteng 
@@ -23,3 +23,4 @@ choco install -y sublimetext3
 choco install -y telegram
 choco install -y vmwareworkstation
 choco install -y office365proplus
+choco install -y lenovo-thinkvantage-system-update

@@ -45,7 +45,7 @@ function Main {
   
   # Unique for this package
   executeScript "CapsToCtl.ps1";
-  executeScript "WSL.ps1";
+  #executeScript "WSL.ps1"; #takes too long. Testing for the moment
   executeScript "laptop.ps1";
   
   
