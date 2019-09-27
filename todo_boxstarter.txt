@@ -1,0 +1,12 @@
+1password install
+Customize chrome via PS
+	duckduckgo search
+	extensions
+Remove all shortcuts on desktop
+Customize taskbar
+Change default apps
+Add nextcloud to installed apps
+100% scaling
+custom wallpaper
+remove tap to click 
+Change middle click to middle click and not scroll
