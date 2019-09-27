@@ -46,6 +46,7 @@ function Main {
   # Unique for this package
   executeScript "CapsToCtl.ps1";
   executeScript "WSL.ps1";
+  executeScript "laptop.ps1";
   
   
 
