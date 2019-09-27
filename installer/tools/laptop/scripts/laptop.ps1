@@ -11,7 +11,8 @@ choco install -y k-litecodecpackfull
 #choco install -y microsoft-windows-terminal #not working with fresh 1903 atm
 choco install -y mpv 
 choco install -y putty
-choco install -y mremoteng 
+choco install -y mremoteng
+choco install -y nextcloud-client
 choco install -y namebench
 choco install -y openvpn
 choco install -y pia
