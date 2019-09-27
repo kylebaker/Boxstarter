@@ -2,6 +2,7 @@
 Customize chrome via PS
 	duckduckgo search
 	extensions
+	https://dennisspan.com/deploying-google-chrome-extensions-using-group-policy/
 Remove all shortcuts on desktop
 Customize taskbar
 Change default apps
