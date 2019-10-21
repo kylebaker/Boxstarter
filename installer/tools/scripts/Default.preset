@@ -155,7 +155,7 @@ ShowDesktopInThisPC           	# HideDesktopFromThisPC
 # HideDesktopFromExplorer       # ShowDesktopInExplorer
 ShowDocumentsInThisPC           # HideDocumentsFromThisPC
 # HideDocumentsFromExplorer     # ShowDocumentsInExplorer
-HideDownloadsFromThisPC         # ShowDownloadsInThisPC
+ShowDownloadsInThisPC         	# HideDownloadsFromThisPC
 ShowDownloadsInExplorer         # HideDownloadsFromExplorer
 HideMusicFromThisPC             # ShowMusicInThisPC
 # HideMusicFromExplorer         # ShowMusicInExplorer
