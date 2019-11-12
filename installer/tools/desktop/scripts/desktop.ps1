@@ -12,7 +12,7 @@ choco install -y hwmonitor
 choco install -y itunes
 choco install -y k-litecodecpackfull
 choco install -y markdown-edit
-#choco install -y microsoft-windows-terminal #not working with fresh 1903 atm
+choco install -y microsoft-windows-terminal #not working with fresh 1903 atm
 choco install -y mpv 
 choco install -y putty
 choco install -y mumble
