@@ -5,7 +5,7 @@ choco install -y etcher
 choco install -y filezilla
 choco install -y firefox
 choco install -y foxitreader
-choco install -y geforce-experience
+#choco install -y geforce-experience   #Broken when testing 1909
 choco install -y github-desktop
 choco install -y googlechrome
 choco install -y hwmonitor
