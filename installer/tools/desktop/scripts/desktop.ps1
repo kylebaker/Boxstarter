@@ -12,7 +12,7 @@ choco install -y hwmonitor
 choco install -y itunes
 choco install -y k-litecodecpackfull
 choco install -y markdown-edit
-choco install -y microsoft-windows-terminal #not working with fresh 1903 atm
+#choco install -y microsoft-windows-terminal #not working with 1909
 choco install -y mpv 
 choco install -y putty
 choco install -y mumble
@@ -28,8 +28,8 @@ choco install -y steam
 choco install -y epicgameslauncher
 choco install -y sublimetext3
 choco install -y telegram
-choco install -y streamdeck
-choco install -y origin
+# choco install -y streamdeck #not working with 1909
+# choco install -y origin #not working with 1909 (Although it was a hash issue it seems, could be fine later)
 choco install -y virtualbox
 choco install -y vmwareworkstation
 choco install -y office365proplus
