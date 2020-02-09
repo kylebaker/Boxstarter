@@ -23,5 +23,4 @@ choco install -y steam
 choco install -y sublimetext3
 choco install -y telegram
 choco install -y vmwareworkstation
-choco install -y office365proplus
 choco install -y lenovo-thinkvantage-system-update

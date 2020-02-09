@@ -32,6 +32,5 @@ choco install -y telegram
 # choco install -y origin #not working with 1909 (Although it was a hash issue it seems, could be fine later)
 choco install -y virtualbox
 choco install -y vmwareworkstation
-choco install -y office365proplus
 choco install -y winrar
 choco install -y veeam-agent
