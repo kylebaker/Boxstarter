@@ -41,7 +41,7 @@ function Main {
 
   # stock. Should be used for all configs
   # executeScript "SystemConfiguration.ps1";
-  executeScript "RemoveDefaultApps.ps1";
+  # executeScript "RemoveDefaultApps.ps1";
   executeScript "SetWallpaper.ps1";
   
   # Unique for this Aquaveo package
