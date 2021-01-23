@@ -34,21 +34,21 @@ function Main {
   # Script to set up the host computer for the rest of the script after a reboot
   executeScript "InitialSetup.ps1";
 
-  # Unique for this package
-  executeScript "CapsToCtl.ps1";
-  #executeScript "WSL.ps1"; #takes too long. Testing for the moment
-  executeScript "desktop.ps1";
+  # Script from https://github.com/Disassembler0/Win10-Initial-Setup-Script that removes a ton 
+  # of Windows garbage. The default.preset has been edited from the orignal to match my
+  # use case.
+  powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 
   # stock. Should be used for all configs
   executeScript "SystemConfiguration.ps1";
   executeScript "RemoveDefaultApps.ps1";
   executeScript "SetWallpaper.ps1";
-
-  # Script from https://github.com/Disassembler0/Win10-Initial-Setup-Script that removes a ton 
-  # of Windows garbage. The default.preset has been edited from the orignal to match my
-  # use case.
-  powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
   
+  # Unique for this package
+  executeScript "CapsToCtl.ps1";
+  #executeScript "WSL.ps1"; #takes too long. Testing for the moment
+  executeScript "desktop.ps1";
+
   # Re-enables all the stuff that was turned off during autoinstalls and does
   # the rest of the windows updates
   executeScript "CleanUp.ps1";
