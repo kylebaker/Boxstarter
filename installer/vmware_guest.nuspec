@@ -5,7 +5,7 @@
     <version>1.0</version>
     <title>nuc installer</title>
     <authors>Kyle Baker</authors>
-    <description>NUC installer</description>
+    <description>VMware Guest installer</description>
   </metadata>
   <files>
   	<file src="tools\nuc\**" target="tools"/>

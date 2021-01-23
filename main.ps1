@@ -128,7 +128,7 @@ $optionSelected = Read-Host "Which installer would you like to use? (1/2/3/quit/
 $package = switch ($optionSelected){
     { '1' -contains $_ }          { "desktop" }
     { '2' -contains $_ }          { "laptop" }
-    { '3' -contains $_ }          { "nuc" }
+    { '3' -contains $_ }          { "vmware_guest" }
     { 'n', 'N', 'no', 'NO' -contains $_ }          { "noconfig" }
   }
 
