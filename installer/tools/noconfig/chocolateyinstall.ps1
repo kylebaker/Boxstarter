@@ -48,6 +48,7 @@ function Main {
   # Re-enables all the stuff that was turned off during autoinstalls and does
   # the rest of the windows updates
   executeScript "CleanUp.ps1";
+  Import-StartLayout -LayoutPath "C:\ProgramData\chocolatey\lib\$helperUri\taskbar.xml" -MountPath "C:\"
 
   write-host "Please restart the computer manually so the Clean Up settings applied can take effect"
   return 0
