@@ -119,7 +119,7 @@ Write-Host "[ * ] Getting installer preference ..."
 Write-Host ""
 Write-Host "`t1) Desktop Config"
 Write-Host "`t2) Laptop Config"
-Write-Host "`t3) Intel Nuc Config"
+Write-Host "`t3) VMware Guest"
 Write-Host ""
 Write-Host "`tn/N) No Config installer"
 
