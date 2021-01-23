@@ -185,11 +185,11 @@ ShowThisPCOnDesktop             # HideThisPCFromDesktop
 # ShowNetworkOnDesktop          # HideNetworkFromDesktop
 # HideDesktopIcons              # ShowDesktopIcons
 # ShowBuildNumberOnDesktop      # HideBuildNumberFromDesktop
-HideDesktopFromThisPC           # ShowDesktopInThisPC
+# HideDesktopFromThisPC           # ShowDesktopInThisPC
 # HideDesktopFromExplorer       # ShowDesktopInExplorer
-HideDocumentsFromThisPC         # ShowDocumentsInThisPC
+# HideDocumentsFromThisPC         # ShowDocumentsInThisPC
 # HideDocumentsFromExplorer     # ShowDocumentsInExplorer
-HideDownloadsFromThisPC         # ShowDownloadsInThisPC
+# HideDownloadsFromThisPC         # ShowDownloadsInThisPC
 # HideDownloadsFromExplorer     # ShowDownloadsInExplorer
 HideMusicFromThisPC             # ShowMusicInThisPC
 # HideMusicFromExplorer         # ShowMusicInExplorer
