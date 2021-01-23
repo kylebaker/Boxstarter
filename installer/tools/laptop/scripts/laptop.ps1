@@ -1,4 +1,4 @@
-choco install -y 7zip.install
+choco install -y 7zip
 choco install -y discord
 choco install -y filezilla
 choco install -y firefox
