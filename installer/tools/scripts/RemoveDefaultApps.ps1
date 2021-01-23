@@ -4,8 +4,8 @@
 
 #https://github.com/W4RH4WK/Debloat-Windows-10/blob/master/scripts/remove-default-apps.ps1
 
-Import-Module -DisableNameChecking $PSScriptRoot\take-own.psm1
-Import-Module -DisableNameChecking $PSScriptRoot\New-FolderForced.psm1
+Import-Module -DisableNameChecking \take-own.psm1
+Import-Module -DisableNameChecking \New-FolderForced.psm1
 
 Write-Output "Elevating privileges for this process"
 do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
