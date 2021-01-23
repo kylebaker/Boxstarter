@@ -3,7 +3,6 @@ choco install -y discord
 choco install -y rufus
 choco install -y filezilla
 choco install -y firefox
-choco install -y foxitreader
 # choco install -y geforce-game-ready-driver # Can't test inside VM
 choco install -y github-desktop
 choco install -y hwmonitor
