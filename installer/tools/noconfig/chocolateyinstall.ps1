@@ -40,7 +40,7 @@ function Main {
   powershell.exe -NoProfile -File "$ps1" -include "$psm1" -preset "$preset"
 
   # stock. Should be used for all configs
-  # executeScript "SystemConfiguration.ps1";
+  executeScript "SystemConfiguration.ps1";
   # executeScript "RemoveDefaultApps.ps1";
   executeScript "SetWallpaper.ps1";
   
