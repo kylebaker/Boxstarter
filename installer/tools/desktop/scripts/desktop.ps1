@@ -10,7 +10,7 @@ choco install -y hwmonitor
 choco install -y k-litecodecpackfull
 choco install -y microsoft-windows-terminal
 choco install -y putty
-# choco install -y nextcloud-client # failing for some reason
+choco install -y nextcloud-client # failing for some reason
 choco install -y namebench
 choco install -y powertoys
 choco install -y signal
