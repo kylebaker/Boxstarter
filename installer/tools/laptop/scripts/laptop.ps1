@@ -1,5 +1,6 @@
 choco install -y 7zip
 choco install -y discord
+choco install -y rufus
 choco install -y filezilla
 choco install -y firefox
 choco install -y github-desktop
