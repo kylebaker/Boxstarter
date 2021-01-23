@@ -13,3 +13,4 @@
 
  # Set desktop background to black
 set-itemproperty -path 'HKCU:\Control Panel\Colors' -name Background -value "0 0 0"
+set-itemproperty -path 'HKCU:\Control Panel\Desktop' -name Wallpaper -value ""
